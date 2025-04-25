@@ -33,4 +33,5 @@ module.exports = {
   sequelize,
   User,
   Article,
+  Products,
 };
