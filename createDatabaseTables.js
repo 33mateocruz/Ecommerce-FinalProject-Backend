@@ -5,8 +5,8 @@
  * nuevamente.
  *
  * Para ejecutar este archivo se debe correr el comando:
- *
- * 👉 node createDatabaseTables.js
+ *node createDatabaseTables.js
+ * 👉
  *
  * Como alternativa, en el artchivo package.json se creó un comando "alias"
  * para que la ejecución sea un poco más corta:
