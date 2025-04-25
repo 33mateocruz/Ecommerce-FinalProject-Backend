@@ -1,6 +1,6 @@
 const { Pedido, Comprador } = require("../models");
 
-// Display a listing of the resource.
+
 async function index(req, res) {
   const pedidos = await Pedido.findAll({
     include: [
@@ -13,7 +13,7 @@ async function index(req, res) {
   res.json(pedidos);
 }
 
-// Display the specified resource.
+
 async function show(req, res) {
   const pedido = await Pedido.findByPk(req.params.id, {
     include: [
@@ -29,7 +29,7 @@ async function show(req, res) {
   res.json(pedido);
 }
 
-// Store a newly created resource in storage.
+
 async function store(req, res) {
   const pedido = await Pedido.create({
     compradorId: req.body.compradorId,
@@ -39,7 +39,7 @@ async function store(req, res) {
   res.status(201).json(pedido);
 }
 
-// Update the specified resource in storage.
+
 async function update(req, res) {
   const pedido = await Pedido.findByPk(req.params.id);
   if (!pedido) {
@@ -53,7 +53,7 @@ async function update(req, res) {
   res.json(pedido);
 }
 
-// Remove the specified resource from storage.
+
 async function destroy(req, res) {
   const pedido = await Pedido.findByPk(req.params.id);
   if (!pedido) {
@@ -63,8 +63,6 @@ async function destroy(req, res) {
   res.status(204).send();
 }
 
-// Otros handlers...
-// ...
 
 module.exports = {
   index,

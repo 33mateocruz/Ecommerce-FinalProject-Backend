@@ -9,20 +9,45 @@ class User extends Model {
           primaryKey: true,
           autoIncrement: true,
         },
-        firstname: {
+        nombre: {
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
+        apellido: {
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
+        email: {
+          type: DataTypes.STRING,
+          allowNull: false,
+          unique: true,
+          validate: {
+            isEmail: true,
+          },
+        },
+        direccion: {
           type: DataTypes.STRING,
         },
-        lastname: {
+        telefono: {
           type: DataTypes.STRING,
+        },
+        password: {
+          type: DataTypes.STRING,
+          allowNull: false,
         },
       },
       {
         sequelize,
-        modelName: "user", // Nombre del modelo en singular y en minúscula.
-      },
+        modelName: "user",
+        tableName: "users",
+        timestamps: true,
+      }
     );
+
     return User;
   }
 }
 
 module.exports = User;
+
+
