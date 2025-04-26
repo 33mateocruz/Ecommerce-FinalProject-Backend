@@ -1,8 +1,8 @@
-const { Pedido, Comprador } = require("../models");
+const { Order, Comprador } = require("../models");
 
 // Display a listing of the resource.
 async function index(req, res) {
-  const pedidos = await Pedido.findAll({
+  const orders = await order.findAll({
     include: [
       {
         model: Comprador,
@@ -10,12 +10,12 @@ async function index(req, res) {
       },
     ],
   });
-  res.json(pedidos);
+  res.json(orders);
 }
 
 // Display the specified resource.
 async function show(req, res) {
-  const pedido = await Pedido.findByPk(req.params.id, {
+  const order = await Order.findByPk(req.params.id, {
     include: [
       {
         model: Comprador,
@@ -23,43 +23,43 @@ async function show(req, res) {
       },
     ],
   });
-  if (!pedido) {
+  if (!order) {
     return res.status(404).json({ error: "Pedido no encontrado" });
   }
-  res.json(pedido);
+  res.json(order);
 }
 
 // Store a newly created resource in storage.
 async function store(req, res) {
-  const pedido = await Pedido.create({
+  const order = await Order.create({
     compradorId: req.body.compradorId,
     items: req.body.items,
     estado: req.body.estado,
   });
-  res.status(201).json(pedido);
+  res.status(201).json(oreder);
 }
 
 // Update the specified resource in storage.
 async function update(req, res) {
-  const pedido = await Pedido.findByPk(req.params.id);
-  if (!pedido) {
+  const order = await Order.findByPk(req.params.id);
+  if (!order) {
     return res.status(404).json({ error: "Pedido no encontrado" });
   }
-  await pedido.update({
+  await order.update({
     compradorId: req.body.compradorId,
     items: req.body.items,
     estado: req.body.estado,
   });
-  res.json(pedido);
+  res.json(order);
 }
 
 // Remove the specified resource from storage.
 async function destroy(req, res) {
-  const pedido = await Pedido.findByPk(req.params.id);
-  if (!pedido) {
+  const order = await Order.findByPk(req.params.id);
+  if (!order) {
     return res.status(404).json({ error: "Pedido no encontrado" });
   }
-  await pedido.destroy();
+  await order.destroy();
   res.status(204).send();
 }
 

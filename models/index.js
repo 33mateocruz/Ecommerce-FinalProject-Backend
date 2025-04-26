@@ -15,11 +15,13 @@ const sequelize = new Sequelize(
 const User = require("./User");
 const Article = require("./Article");
 const Products = require("./products");
+const Order = require("./order");
 
 // Inicializar todos los modelos:
 User.initModel(sequelize);
 Article.initModel(sequelize);
 Products.initModel(sequelize);
+Order.initModel(sequelize);
 
 /*
  * Luego de definir los modelos, se pueden establecer relaciones entre los
@@ -34,4 +36,5 @@ module.exports = {
   User,
   Article,
   Products,
+  Order,
 };

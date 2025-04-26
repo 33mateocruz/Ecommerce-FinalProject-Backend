@@ -1,8 +1,8 @@
 const { Model, DataTypes } = require("sequelize");
 
-class Pedido extends Model {
+class Order extends Model {
   static initModel(sequelize) {
-    Pedido.init(
+    Order.init(
       {
         id: {
           type: DataTypes.BIGINT.UNSIGNED,
@@ -13,9 +13,23 @@ class Pedido extends Model {
           type: DataTypes.BIGINT.UNSIGNED,
           allowNull: false,
         },
-        items: {
-          type: DataTypes.JSON,
+        nombreProducto: {
+          type: DataTypes.STRING,
           allowNull: false,
+        },
+        cantidad: {
+          type: DataTypes.INTEGER,
+          allowNull: false,
+          validate: {
+            min: 1,
+          },
+        },
+        precio: {
+          type: DataTypes.DECIMAL(10, 2),
+          allowNull: false,
+          validate: {
+            min: 0,
+          },
         },
         estado: {
           type: DataTypes.ENUM("pago pendiente", "rechazado", "pago", "en tránsito", "entregado"),
@@ -24,12 +38,14 @@ class Pedido extends Model {
       },
       {
         sequelize,
-        modelName: "pedido", // Nombre del modelo en singular y en minúscula.
+        modelName: "order",
+        tableName: "orders",
+        timestamps: true,
       },
     );
 
-    return Pedido;
+    return Order;
   }
 }
 
-module.exports = Pedido;
+module.exports = Order;
