@@ -6,45 +6,24 @@ module.exports = async () => {
   const orders = [
     {
       compradorId: 1,
-      nombreProducto: "Producto A",
+      nombreProducto: "Smart TV 55",
       cantidad: 2,
-      precio: 100,
+      precio: 499.99,
       estado: "pago pendiente",
     },
     {
       compradorId: 1,
-      nombreProducto: "Producto B",
+      nombreProducto: "Bluetooth Speaker",
       cantidad: 1,
-      precio: 200,
+      precio: 89.99,
       estado: "pago pendiente",
     },
     {
       compradorId: 2,
-      nombreProducto: "Producto C",
+      nombreProducto: "Air Conditioner 3000W",
       cantidad: 3,
-      precio: 150,
+      precio: 329.99,
       estado: "en tránsito",
-    },
-    {
-      compradorId: 2,
-      nombreProducto: "Producto D",
-      cantidad: 4,
-      precio: 250,
-      estado: "en tránsito",
-    },
-    {
-      compradorId: 3,
-      nombreProducto: "Producto E",
-      cantidad: 1,
-      precio: 300,
-      estado: "entregado",
-    },
-    {
-      compradorId: 3,
-      nombreProducto: "Producto F",
-      cantidad: 2,
-      precio: 400,
-      estado: "entregado",
     },
   ];
 
