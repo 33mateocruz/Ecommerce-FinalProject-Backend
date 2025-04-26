@@ -9,11 +9,11 @@ class User extends Model {
           primaryKey: true,
           autoIncrement: true,
         },
-        nombre: {
+        name: {
           type: DataTypes.STRING,
           allowNull: false,
         },
-        apellido: {
+        surname: {
           type: DataTypes.STRING,
           allowNull: false,
         },
@@ -25,10 +25,13 @@ class User extends Model {
             isEmail: true,
           },
         },
-        direccion: {
+        address: {
           type: DataTypes.STRING,
         },
-        telefono: {
+        phone: {
+          type: DataTypes.STRING,
+        },
+        orders: {
           type: DataTypes.STRING,
         },
         password: {
@@ -41,7 +44,7 @@ class User extends Model {
         modelName: "user",
         tableName: "users",
         timestamps: true,
-      }
+      },
     );
 
     return User;
@@ -49,5 +52,3 @@ class User extends Model {
 }
 
 module.exports = User;
-
-
