@@ -4,13 +4,13 @@ class categories extends Model {
   static initModel(sequelize) {
     categories.init(
       {
-        id: {
-          type: DataTypes.BIGINT.UNSIGNED,
-          primaryKey: true,
-          autoIncrement: true,
+        name: {
+          type: DataTypes.STRING,
+          allowNull: false,
         },
         category: {
           type: DataTypes.STRING,
+          allowNull: false,
         },
       },
       {
