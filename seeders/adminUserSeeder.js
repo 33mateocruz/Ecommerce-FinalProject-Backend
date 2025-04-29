@@ -1,22 +1,27 @@
-"use strict";
-const bcrypt = require("bcrypt");
+const { AdminUser } = require("../models");
 
-module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    const hash = await bcrypt.hash("admin123", 10);
-    return queryInterface.bulkInsert("admin_users", [
-      {
-        nombre: "Admin",
-        apellido: "Principal",
-        email: "admin@admin.com",
-        contraseña: hash,
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      },
-    ]);
-  },
+module.exports = async () => {
+  const admins = [
+    {
+      nombre: "Admin",
+      apellido: "Principal",
+      email: "admin@admin.com",
+      contraseña: await bcrypt.hash("admin123", 10),
+    },
+    {
+      nombre: "Soporte",
+      apellido: "Secundario",
+      email: "soporte@admin.com",
+      contraseña: await bcrypt.hash("soporte123", 10),
+    },
+  ];
 
-  down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete("admin_users", { email: "admin@admin.com" }, {});
-  },
+  for (const adminData of admins) {
+    await AdminUser.findOrCreate({
+      where: { email: adminData.email },
+      defaults: adminData,
+    });
+  }
+
+  console.log("[Database] Seeder de AdminUser ejecutado sin duplicar registros.");
 };
