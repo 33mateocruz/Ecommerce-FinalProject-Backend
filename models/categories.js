@@ -1,16 +1,19 @@
 const { Model, DataTypes } = require("sequelize");
 
-class categories extends Model {
+class Categories extends Model {
   static initModel(sequelize) {
-    categories.init(
+    Categories.init(
       {
         name: {
           type: DataTypes.STRING,
           allowNull: false,
         },
         category: {
-          type: DataTypes.STRING,
+          type: DataTypes.INTEGER,
           allowNull: false,
+          validate: {
+            min: 1,
+          },
         },
       },
       {
@@ -21,8 +24,8 @@ class categories extends Model {
       },
     );
 
-    return categories;
+    return Categories;
   }
 }
 
-module.exports = categories;
+module.exports = Categories;
