@@ -20,3 +20,4 @@ module.exports = {
     return queryInterface.bulkDelete("admin_users", { email: "admin@admin.com" }, {});
   },
 };
+/hola/;
