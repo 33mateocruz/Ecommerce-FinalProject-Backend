@@ -1,5 +1,5 @@
-const categories = require("../models/categories.js");
-const Category = require("../models/categories.js");
+const categories = require("../models/Categories.js");
+const Category = require("../models/Categories.js");
 
 const index = async (req, res) => {
   try {
