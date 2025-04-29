@@ -38,5 +38,3 @@ exports.remove = async (req, res) => {
   if (!deleted) return res.status(404).json({ error: "No encontrado" });
   res.status(204).send();
 };
-
-/hola/;
