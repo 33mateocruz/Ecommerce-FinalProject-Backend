@@ -16,13 +16,13 @@ const User = require("./User");
 const Article = require("./Article");
 const Products = require("./products");
 const Order = require("./order");
-
+const Categories = require("./Categories");
 // Inicializar todos los modelos:
 User.initModel(sequelize);
 Article.initModel(sequelize);
 Products.initModel(sequelize);
 Order.initModel(sequelize);
-
+Categories.initModel(sequelize);
 /*
  * Luego de definir los modelos, se pueden establecer relaciones entre los
  * mismos (usando métodos como belongsTo, hasMany y belongsToMany)...
@@ -37,4 +37,5 @@ module.exports = {
   Article,
   Products,
   Order,
+  Categories,
 };
