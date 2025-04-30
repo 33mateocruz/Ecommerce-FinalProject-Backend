@@ -1,4 +1,6 @@
 const { AdminUser } = require("../models");
+require("dotenv").config();
+const bcrypt = require("bcryptjs");
 
 module.exports = async () => {
   const admins = [
