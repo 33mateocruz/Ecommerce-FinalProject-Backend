@@ -2,51 +2,59 @@ const { User } = require("../models");
 
 async function index(req, res) {
   try {
-    const users = await User.find();
+    const users = await User.findAll();
     res.json(users);
   } catch (error) {
-    res.status(500).json({ message: "Error al obtener los compradores" });
+    res.status(500).json({ message: "Error al obtener los usuarios" });
   }
 }
 
 async function show(req, res) {
   try {
-    const user = await User.findById(req.params.id);
-    if (!user) return res.status(404).json({ message: "Comprador no encontrado" });
+    const user = await User.findByPk(req.params.id);
+    if (!user) return res.status(404).json({ message: "Usuario no encontrado" });
     res.json(user);
   } catch (error) {
-    res.status(500).json({ message: "Error al obtener el comprador" });
+    res.status(500).json({ message: "Error al obtener el usuario" });
   }
 }
 
 async function store(req, res) {
   try {
-    const { nombre, apellido, email, direccion, telefono, pedidos, password } = req.body;
-    const newUser = new User({ nombre, apellido, email, direccion, telefono, pedidos, password });
-    await newUser.save();
+    const { name, surname, email, address, phone, password } = req.body;
+    const newUser = await User.create({
+      name,
+      surname,
+      email,
+      address,
+      phone,
+      password,
+    });
     res.status(201).json(newUser);
   } catch (error) {
-    res.status(400).json({ message: "Error al crear el comprador" });
+    res.status(400).json({ message: "Error al crear el usuario" });
   }
 }
 
 async function update(req, res) {
   try {
-    const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    if (!updatedUser) return res.status(404).json({ message: "Comprador no encontrado" });
-    res.json(updatedUser);
+    const user = await User.findByPk(req.params.id);
+    if (!user) return res.status(404).json({ message: "Usuario no encontrado" });
+    await user.update(req.body);
+    res.json(user);
   } catch (error) {
-    res.status(400).json({ message: "Error al actualizar el comprador" });
+    res.status(400).json({ message: "Error al actualizar el usuario" });
   }
 }
 
 async function destroy(req, res) {
   try {
-    const deletedUser = await User.findByIdAndDelete(req.params.id);
-    if (!deletedUser) return res.status(404).json({ message: "Comprador no encontrado" });
-    res.json({ message: "Comprador eliminado correctamente" });
+    const user = await User.findByPk(req.params.id);
+    if (!user) return res.status(404).json({ message: "Usuario no encontrado" });
+    await user.destroy();
+    res.json({ message: "Usuario eliminado correctamente" });
   } catch (error) {
-    res.status(500).json({ message: "Error al eliminar el comprador" });
+    res.status(500).json({ message: "Error al eliminar el usuario" });
   }
 }
 
