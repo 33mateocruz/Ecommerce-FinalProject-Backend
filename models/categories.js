@@ -1,8 +1,8 @@
 const { Model, DataTypes } = require("sequelize");
 
-class Categories extends Model {
+class Category extends Model {
   static initModel(sequelize) {
-    Categories.init(
+    Category.init(
       {
         name: {
           type: DataTypes.STRING,
@@ -24,8 +24,8 @@ class Categories extends Model {
       },
     );
 
-    return Categories;
+    return Category;
   }
 }
 
-module.exports = Categories;
+module.exports = Category;

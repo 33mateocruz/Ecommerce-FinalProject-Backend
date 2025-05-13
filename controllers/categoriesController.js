@@ -1,19 +1,18 @@
-const categories = require("../models/Categories.js");
 const Category = require("../models/Categories.js");
 
 const index = async (req, res) => {
   try {
-    const categories = await Product.findAll();
+    const categories = await Category.findAll();
     res.json(categories);
   } catch (error) {
-    console.error("Error fetching products:", error);
-    res.status(500).json({ error: "Error fetching products" });
+    console.error("Error fetching categoriess:", error);
+    res.status(500).json({ error: "Error fetching categoriess" });
   }
 };
 
 const show = async (req, res) => {
   try {
-    const category = await Product.findByPk(req.params.id);
+    const category = await Category.findByPk(req.params.id);
     if (category) {
       res.json(category);
     } else {
@@ -37,7 +36,7 @@ const store = async (req, res) => {
 
 const update = async (req, res) => {
   try {
-    const category = await Product.findByPk(req.params.id);
+    const category = await Category.findByPk(req.params.id);
     if (category) {
       await category.update(req.body);
       res.json(category);
