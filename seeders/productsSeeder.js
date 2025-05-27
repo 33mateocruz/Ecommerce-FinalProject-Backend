@@ -3,30 +3,32 @@ const { Products } = require("../models");
 module.exports = async () => {
   const products = [
     {
-      name: 'Smart TV 55"',
-      description: "Ultra HD 4K Smart TV with HDR support.",
+      name: 'EQUILIBRIO Cachorro 15kg"',
+      description:
+        "alimento completo diseñado para perros en fase de crecimiento, desde los 2 meses hasta los 12, 18 o 24 meses, dependiendo de la raza",
       image: "https://example.com/images/tv55.jpg",
-      price: 499.99,
+      price: 3.783,
       stock: 15,
-      category: "Image",
+      category: "Secos",
       featured: true,
     },
     {
-      name: "Bluetooth Speaker",
-      description: "Portable speaker with deep bass and 12h battery.",
+      name: "Collar perro 53cm",
+      description:
+        "El collar para perro es un accesorio diseñado para brindar comodidad y seguridad a tu mascota",
       image: "https://example.com/images/speaker.jpg",
-      price: 89.99,
+      price: 185.0,
       stock: 30,
-      category: "Sound",
+      category: "Collares",
       featured: false,
     },
     {
-      name: "Air Conditioner 3000W",
-      description: "Energy-efficient air conditioner for medium rooms.",
+      name: "Comedero mascotas acero inoxidable",
+      description: "Fabricado con acero inoxidable diseñado para durar.",
       image: "https://example.com/images/ac3000.jpg",
-      price: 329.99,
+      price: 1.25,
       stock: 10,
-      category: "Climate",
+      category: "Comedores",
       featured: true,
     },
   ];
