@@ -26,7 +26,7 @@ module.exports = async () => {
       name: "Comedero mascotas acero inoxidable",
       description: "Fabricado con acero inoxidable diseñado para durar.",
       image: "https://example.com/images/ac3000.jpg",
-      price: 1.25,
+      price: 350.0,
       stock: 10,
       category: "Comedores",
       featured: true,
