@@ -6,7 +6,8 @@ module.exports = async () => {
       name: 'EQUILIBRIO Cachorro 15kg"',
       description:
         "alimento completo diseñado para perros en fase de crecimiento, desde los 2 meses hasta los 12, 18 o 24 meses, dependiendo de la raza",
-      image: "https://example.com/images/tv55.jpg",
+      image:
+        "https://purina.com.uy/sites/default/files/styles/webp/public/2022-09/ADULTOS%20PERROS%20MINIS%20Y%20PEQUEN%CC%83OS-dog-chow-frente.jpeg.webp?itok=UwtgKL2x",
       price: 3.783,
       stock: 15,
       category: "Secos",
@@ -16,7 +17,8 @@ module.exports = async () => {
       name: "Collar perro 53cm",
       description:
         "El collar para perro es un accesorio diseñado para brindar comodidad y seguridad a tu mascota",
-      image: "https://example.com/images/speaker.jpg",
+      image:
+        "https://purina.com.uy/sites/default/files/styles/webp/public/2022-09/ADULTOS%20PERROS%20MINIS%20Y%20PEQUEN%CC%83OS-dog-chow-frente.jpeg.webp?itok=UwtgKL2x",
       price: 185.0,
       stock: 30,
       category: "Collares",
@@ -25,7 +27,8 @@ module.exports = async () => {
     {
       name: "Comedero mascotas acero inoxidable",
       description: "Fabricado con acero inoxidable diseñado para durar.",
-      image: "https://example.com/images/ac3000.jpg",
+      image:
+        "https://purina.com.uy/sites/default/files/styles/webp/public/2022-09/ADULTOS%20PERROS%20MINIS%20Y%20PEQUEN%CC%83OS-dog-chow-frente.jpeg.webp?itok=UwtgKL2x",
       price: 350.0,
       stock: 10,
       category: "Comedores",
