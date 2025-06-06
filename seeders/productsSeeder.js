@@ -1,7 +1,7 @@
 const { Products } = require("../models");
 
 module.exports = async () => {
-  // Elimina productos existentes para evitar duplicados
+  
   await Products.destroy({ where: {} });
 
   const products = [
