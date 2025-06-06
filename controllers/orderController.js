@@ -1,6 +1,5 @@
 const { Order, User } = require("../models");
 
-// Display a listing of the resource.
 async function index(req, res) {
   try {
     const orders = await Order.findAll({
@@ -18,7 +17,6 @@ async function index(req, res) {
   }
 }
 
-// Display the specified resource.
 async function show(req, res) {
   try {
     const order = await Order.findByPk(req.params.id, {
@@ -39,7 +37,6 @@ async function show(req, res) {
   }
 }
 
-// Store a newly created resource in storage.
 async function store(req, res) {
   try {
     const order = await Order.create({
@@ -55,7 +52,6 @@ async function store(req, res) {
   }
 }
 
-// Update the specified resource in storage.
 async function update(req, res) {
   try {
     const order = await Order.findByPk(req.params.id);
@@ -75,7 +71,6 @@ async function update(req, res) {
   }
 }
 
-// Remove the specified resource from storage.
 async function destroy(req, res) {
   try {
     const order = await Order.findByPk(req.params.id);
@@ -88,9 +83,6 @@ async function destroy(req, res) {
     res.status(500).json({ error: "Error al eliminar el pedido" });
   }
 }
-
-// Otros handlers...
-// ...
 
 module.exports = {
   index,
