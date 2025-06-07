@@ -31,6 +31,9 @@ class User extends Model {
         phone: {
           type: DataTypes.STRING,
         },
+        orders: {
+          type: DataTypes.STRING,
+        },
         password: {
           type: DataTypes.STRING,
           allowNull: false,

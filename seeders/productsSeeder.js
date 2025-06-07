@@ -1,7 +1,8 @@
-const { Product } = require("../models");
+const { Products } = require("../models");
 
 module.exports = async () => {
-  await Product.destroy({ where: {} });
+  
+  await Products.destroy({ where: {} });
 
   const products = [
     {
@@ -38,6 +39,6 @@ module.exports = async () => {
     },
   ];
 
-  await Product.bulkCreate(products);
+  await Products.bulkCreate(products);
   console.log("[Database] Se corrió el seeder de Products con 3 productos únicos.");
 };
