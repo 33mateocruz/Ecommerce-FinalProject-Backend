@@ -1,28 +1,26 @@
-"use strict";
-
 const { Order } = require("../models");
 
 module.exports = async () => {
   const orders = [
     {
       compradorId: 1,
-      nombreProducto: "Smart TV 55",
-      cantidad: 2,
-      precio: 499.99,
+      nombreProducto: "EQUILIBRIO Cachorro 15kg",
+      cantidad: 1,
+      precio: 3783,
       estado: "pago pendiente",
     },
     {
       compradorId: 1,
-      nombreProducto: "Bluetooth Speaker",
+      nombreProducto: "Collar perro 53cm",
       cantidad: 1,
-      precio: 89.99,
-      estado: "pago pendiente",
+      precio: 185,
+      estado: "rechazado",
     },
     {
       compradorId: 2,
-      nombreProducto: "Air Conditioner 3000W",
-      cantidad: 3,
-      precio: 329.99,
+      nombreProducto: "Comedero mascotas acero inoxidable",
+      cantidad: 1,
+      precio: 350,
       estado: "en tránsito",
     },
   ];
