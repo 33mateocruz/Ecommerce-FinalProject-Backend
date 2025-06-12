@@ -12,7 +12,7 @@ async function logIn(req, res) {
       const match = await bcrypt.compare(password, user.password);
       if (match) {
         // Corrección: el secreto ahora se toma desde la variable de entorno
-        const token = jwt.sign({ sub: user.id }, process.env.JWT_SECRET);
+        const token = jwt.sign({ sub: user.id, role: 1 }, process.env.JWT_SECRET);
         return res.json({ token: token });
       } else {
         return res.status(401).json({ error: "su contra no coincide" });
