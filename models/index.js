@@ -1,47 +1,35 @@
 const { Sequelize } = require("sequelize");
-
 const sequelize = new Sequelize(
-  process.env.DB_DATABASE, // Ej: hack_academy_db
-  process.env.DB_USERNAME, // Ej: root
-  process.env.DB_PASSWORD, // Ej: root
+  process.env.DB_DATABASE,
+  process.env.DB_USERNAME,
+  process.env.DB_PASSWORD,
   {
-    host: process.env.DB_HOST, // Ej: 127.0.0.1
-    dialect: process.env.DB_CONNECTION, // Ej: mysql
-    logging: false, // Para que no aparezcan mensajes en consola.
+    host: process.env.DB_HOST,
+    dialect: process.env.DB_CONNECTION,
+    logging: false,
   },
 );
 
-// Requerir todos los modelos:
-const User = require("./User");
-const Products = require("./products");
-const Order = require("./Order");
-const Categories = require("./Categories");
 const AdminUser = require("./adminUser");
-// Inicializar todos los modelos:
-AdminUser.initModel(sequelize);
-User.initModel(sequelize);
-Products.initModel(sequelize);
-Order.initModel(sequelize);
-Categories.initModel(sequelize);
+const User = require("./User");
+const Product = require("./products");
+const Order = require("./order");
+const Category = require("./categories");
+const OrderProduct = require("./orderproducts");
 
-// Establecer relaciones
-Order.belongsTo(User, { foreignKey: "compradorId", as: "comprador" });
-User.hasMany(Order, { foreignKey: "compradorId", as: "pedidos" });
-
-/*
- * Luego de definir los modelos, se pueden establecer relaciones entre los
- * mismos (usando métodos como belongsTo, hasMany y belongsToMany)...
- *
- * Por ejemplo, si un User está relacionado con un Article, establecerlo
- * aquí abajo.
- */
-
-module.exports = {
-  sequelize,
-  AdminUser,
-  User,
-
-  Products,
-  Order,
-  Categories,
+const models = {
+  AdminUser: AdminUser.initModel(sequelize),
+  User: User.initModel(sequelize),
+  Product: Product.initModel(sequelize),
+  Order: Order.initModel(sequelize),
+  Category: Category.initModel(sequelize),
+  OrderProduct: OrderProduct.initModel(sequelize),
 };
+
+Object.values(models).forEach((model) => {
+  if (typeof model.associate === "function") {
+    model.associate(models);
+  }
+});
+
+module.exports = { ...models, sequelize };

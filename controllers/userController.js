@@ -1,7 +1,6 @@
 const { default: bcrypt } = require("bcryptjs");
 const { User } = require("../models");
 
-
 async function index(req, res) {
   try {
     const users = await User.findAll();
