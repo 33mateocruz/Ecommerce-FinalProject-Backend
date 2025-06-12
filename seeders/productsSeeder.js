@@ -36,6 +36,17 @@ module.exports = async () => {
       category: "Comedores",
       featured: true,
     },
+    {
+      name: "Juguete para perros de cuerda",
+      description:
+        "Un juguete resistente y duradero, ideal para jugar a tirar y aflojar con tu perro.",
+      image:
+        "https://mundomascota.uy/wp-content/uploads/2024/10/D_889841-MLU79747923601_102024-F.jpg",
+      price: 150,
+      stock: 25,
+      category: "Juguetes",
+      featured: false,
+    },
   ];
 
   await Product.bulkCreate(products);
