@@ -1,13 +1,15 @@
-const { Product } = require("../models");
+const { Product, sequelize } = require("../models");
 
 module.exports = async () => {
   await Product.destroy({ where: {} });
 
+  await sequelize.query("ALTER TABLE products AUTO_INCREMENT = 1");
+
   const products = [
     {
+      id: 1,
       name: "EQUILIBRIO Cachorro 15kg",
-      description:
-        "Alimento completo diseñado para perros en fase de crecimiento, desde los 2 meses hasta los 12, 18 o 24 meses, dependiendo de la raza.",
+      description: "Alimento completo diseñado para perros en fase de crecimiento...",
       image:
         "https://purina.com.uy/sites/default/files/styles/webp/public/2022-09/ADULTOS%20PERROS%20MINIS%20Y%20PEQUEN%CC%83OS-dog-chow-frente.jpeg.webp?itok=UwtgKL2x",
       price: 3783,
@@ -16,9 +18,9 @@ module.exports = async () => {
       featured: true,
     },
     {
+      id: 2,
       name: "Collar perro 53cm",
-      description:
-        "El collar para perro es un accesorio diseñado para brindar comodidad y seguridad a tu mascota.",
+      description: "El collar para perro es un accesorio diseñado para brindar comodidad...",
       image:
         "https://www.doggysmarket.com.co/wp-content/uploads/2025/02/Kong-Collar-Perro-Rojo.png",
       price: 185,
@@ -27,6 +29,7 @@ module.exports = async () => {
       featured: false,
     },
     {
+      id: 3,
       name: "Comedero mascotas acero inoxidable",
       description: "Fabricado con acero inoxidable diseñado para durar.",
       image:
@@ -37,6 +40,7 @@ module.exports = async () => {
       featured: true,
     },
     {
+      id: 4,
       name: "Juguete para perros de cuerda",
       description:
         "Un juguete resistente y duradero, ideal para jugar a tirar y aflojar con tu perro.",
@@ -50,5 +54,6 @@ module.exports = async () => {
   ];
 
   await Product.bulkCreate(products);
-  console.log("[Database] Se corrió el seeder de Products con 3 productos únicos.");
+
+  console.log("[Database] Seeder de Products ejecutado: productos eliminados y IDs reiniciados.");
 };
