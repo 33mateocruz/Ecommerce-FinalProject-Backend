@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const AdminController = require("../controllers/adminUserController.js");
-const authMiddleware = require("../middlewares/authMiddleware");
+
 const { expressjwt: checkJwt } = require("express-jwt");
 
 router.post(
