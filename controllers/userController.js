@@ -1,4 +1,5 @@
-const { default: bcrypt } = require("bcryptjs");
+const bcrypt = require("bcryptjs");
+
 const { User } = require("../models");
 
 async function index(req, res) {
