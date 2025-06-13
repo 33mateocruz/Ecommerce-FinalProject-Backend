@@ -1,5 +1,5 @@
-const jwt = require("jsonwebtoken"); // Asegurate de tener instalado jsonwebtoken
-const { default: bcrypt } = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
 const { User } = require("../models");
 
 async function logIn(req, res) {
@@ -10,8 +10,8 @@ async function logIn(req, res) {
 
     if (user) {
       const match = await bcrypt.compare(password, user.password);
+      console.log(user.password, password, match);
       if (match) {
-        // Corrección: el secreto ahora se toma desde la variable de entorno
         const token = jwt.sign({ sub: user.id, role: 1 }, process.env.JWT_SECRET);
         return res.json({ token: token });
       } else {
@@ -29,5 +29,3 @@ async function logIn(req, res) {
 module.exports = {
   logIn,
 };
-
-// Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR...

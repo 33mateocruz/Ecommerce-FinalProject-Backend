@@ -25,6 +25,7 @@ const show = async (req, res) => {
 };
 
 const store = async (req, res) => {
+  console.log(req.auth.sub, req.auth.role);
   try {
     const newProduct = await Product.create(req.body);
     res.status(201).json(newProduct);

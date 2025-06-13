@@ -4,8 +4,6 @@ const AdminController = require("../controllers/adminUserController.js");
 const authMiddleware = require("../middlewares/authMiddleware");
 const { expressjwt: checkJwt } = require("express-jwt");
 
-router.use(authMiddleware);
-
 router.post(
   "/",
   checkJwt({ secret: process.env.JWT_SECRET, algorithms: ["HS256"] }),

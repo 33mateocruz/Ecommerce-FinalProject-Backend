@@ -1,6 +1,9 @@
 const { User } = require("../models");
+const bcrypt = require("bcryptjs");
 
 module.exports = async () => {
+  await User.destroy({ where: {}, truncate: true });
+
   const users = [
     {
       name: "Lucía",
@@ -8,7 +11,7 @@ module.exports = async () => {
       email: "lucia.martinez@example.com",
       address: "Av. Libertador 1234, Buenos Aires",
       phone: "+54 11 2345 6789",
-      password: "lucia1234",
+      password: "1234",
     },
     {
       name: "Mateo",
@@ -37,14 +40,9 @@ module.exports = async () => {
   ];
 
   for (const userData of users) {
-    // Crea una copia sin 'orders'
-    const { orders, ...userWithoutOrders } = userData;
-
-    await User.findOrCreate({
-      where: { email: userWithoutOrders.email },
-      defaults: userWithoutOrders,
-    });
+    const hashedPassword = await bcrypt.hash(userData.password, 10);
+    await User.create({ ...userData, password: hashedPassword });
   }
 
-  console.log("[Database] Seeder de User ejecutado sin duplicar registros.");
+  console.log("[Database] Seeder de User ejecutado: usuarios eliminados y recreados.");
 };
