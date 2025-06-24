@@ -227,7 +227,7 @@ module.exports = async () => {
       name: "Cuerda con Nudos",
       description: "Fuerte, perfecta para tirar y morder.",
       image:
-        "https://w7.pngwing.com/pngs/197/217/png-transparent-dog-toys-rope-pet-rope-knot-animals-ring-pet-thumbnail.png",
+        "https://www.americanpet.com.uy/images/virtuemart/product/resized/IMG_0679_640x640.png",
       price: 390,
       stock: 25,
       category: "juguetes",
@@ -300,10 +300,10 @@ module.exports = async () => {
     },
     {
       id: 59,
-      name: "Túnel de Juego Plegable",
+      name: "Túnel de Juego",
       description: "Para perros pequeños y medianos.",
       image:
-        "https://w7.pngwing.com/pngs/353/219/png-transparent-child-toy-play-ball-pits-tent-tunnel-game-people-textile.png",
+        "https://png.pngtree.com/png-clipart/20250424/original/pngtree-a-pet-toy-tunnel-with-fabric-design-care-product-png-image_20779555.png",
       price: 1950,
       stock: 25,
       category: "juguetes",
@@ -335,8 +335,7 @@ module.exports = async () => {
       id: 62,
       name: "Anillo de Goma Fuerte",
       description: "Para juegos de tracción con humanos.",
-      image:
-        "https://c0.klipartz.com/pngpicture/11/77/gratis-png-anillo-de-caucho-natural-material-de-arandela-de-goma-anillo-thumbnail.png",
+      image: "https://petslovers.es/1114-thickbox_default/barry-king-anillo-de-goma-macizo.jpg",
       price: 630,
       stock: 25,
       category: "juguetes",
@@ -402,7 +401,7 @@ module.exports = async () => {
       name: "Pulpo de Tela con Patitas",
       description: "Con múltiples texturas y sonido.",
       image:
-        "https://w7.pngwing.com/pngs/1000/854/png-transparent-octopus-plush-stuffed-animals-cuddly-toys-teddy-bear-toy-game-marine-mammal-child.png",
+        "https://www.castaburdeos.com.mx/cdn/shop/files/juguete_forma_de_pulpo_para_mascota_3475.png?v=1699466811",
       price: 670,
       stock: 25,
       category: "juguetes",
