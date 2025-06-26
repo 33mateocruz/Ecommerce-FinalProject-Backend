@@ -26,8 +26,7 @@ module.exports = async () => {
     {
       name: "Remera Veraniega Rayada",
       description: "Tela liviana, fresca para verano.",
-      image:
-        "https://www.colettetgaston.com/cdn/shop/files/high_quality_dog_shirt.png?v=1749159105&width=533",
+      image: "https://freeimghost.net/images/2025/06/25/images-removebg-preview.png",
       price: 750,
       stock: 25,
       category: 26,
@@ -36,7 +35,8 @@ module.exports = async () => {
     {
       name: "Disfraz de Abejita",
       description: "Con alas y antenas, adorable para fotos.",
-      image: "https://greenpets.com.co/wp-content/uploads/2021/10/abeja-green-pets.png",
+      image:
+        "https://png.pngtree.com/png-clipart/20231122/original/pngtree-dog-wearing-bee-costume-black-picture-image_13275958.png",
       price: 1200,
       stock: 25,
       category: 26,
@@ -73,7 +73,8 @@ module.exports = async () => {
     {
       name: "Chaleco de Polar Gris",
       description: "Abriga sin molestar el movimiento.",
-      image: "https://nuevaerauruguay.com/wp-content/uploads/2025/04/Dog-Jacket-16.png",
+      image:
+        "https://freeimghost.net/images/2025/06/25/il_300x300.6490680454_s82u-removebg-preview.png",
       price: 980,
       stock: 25,
       category: 26,
@@ -83,7 +84,7 @@ module.exports = async () => {
       name: "Camiseta Messi para Mascotas",
       description: "¡Para los fanas del fútbol!",
       image:
-        "https://acdn-us.mitiendanube.com/stores/035/032/products/remera-argentina1-04b04f33c2f1fb6e6816691505601044-640-0.png",
+        "https://freeimghost.net/images/2025/06/25/remera-argentina1-04b04f33c2f1fb6e6816691505601044-640-0-removebg-preview.png",
       price: 1400,
       stock: 25,
       category: 26,
@@ -146,7 +147,8 @@ module.exports = async () => {
     {
       name: "Conjunto Deportivo Mini",
       description: "Para look casual y cómodo.",
-      image: "https://i.pinimg.com/736x/bd/d8/cd/bdd8cd9a868f5b6aba8f319d9bacc92d.jpg",
+      image:
+        "https://freeimghost.net/images/2025/06/25/bdd8cd9a868f5b6aba8f319d9bacc92d-removebg-preview.png",
       price: 990,
       stock: 25,
       category: 26,
@@ -204,7 +206,7 @@ module.exports = async () => {
       name: "Cuerda con Nudos",
       description: "Fuerte, perfecta para tirar y morder.",
       image:
-        "https://w7.pngwing.com/pngs/197/217/png-transparent-dog-toys-rope-pet-rope-knot-animals-ring-pet-thumbnail.png",
+        "https://www.americanpet.com.uy/images/virtuemart/product/resized/IMG_0679_640x640.png",
       price: 390,
       stock: 25,
       category: 17,
@@ -273,7 +275,7 @@ module.exports = async () => {
       name: "Túnel de Juego Plegable",
       description: "Para perros pequeños y medianos.",
       image:
-        "https://w7.pngwing.com/pngs/353/219/png-transparent-child-toy-play-ball-pits-tent-tunnel-game-people-textile.png",
+        "https://png.pngtree.com/png-clipart/20250424/original/pngtree-a-pet-toy-tunnel-with-fabric-design-care-product-png-image_20779555.png",
       price: 1950,
       stock: 25,
       category: 22,
@@ -302,8 +304,7 @@ module.exports = async () => {
     {
       name: "Anillo de Goma Fuerte",
       description: "Para juegos de tracción con humanos.",
-      image:
-        "https://c0.klipartz.com/pngpicture/11/77/gratis-png-anillo-de-caucho-natural-material-de-arandela-de-goma-anillo-thumbnail.png",
+      image: "https://petslovers.es/1114-thickbox_default/barry-king-anillo-de-goma-macizo.jpg",
       price: 630,
       stock: 25,
       category: 19,
@@ -363,7 +364,7 @@ module.exports = async () => {
       name: "Pulpo de Tela con Patitas",
       description: "Con múltiples texturas y sonido.",
       image:
-        "https://w7.pngwing.com/pngs/1000/854/png-transparent-octopus-plush-stuffed-animals-cuddly-toys-teddy-bear-toy-game-marine-mammal-child.png",
+        "https://www.castaburdeos.com.mx/cdn/shop/files/juguete_forma_de_pulpo_para_mascota_3475.png?v=1699466811",
       price: 670,
       stock: 25,
       category: 21,
