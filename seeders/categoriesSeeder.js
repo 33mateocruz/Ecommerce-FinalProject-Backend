@@ -14,7 +14,7 @@ module.exports = async () => {
     { name: "Espacios y Transporte", category: 10 },
   ];
 
-  await Category.destroy({ where: {} }); // Borra todo antes de insertar
+  await Category.destroy({ where: {} });
   await Category.bulkCreate(categories);
   console.log("[Database] Seeder simplificado: Categories insertadas.");
 };
