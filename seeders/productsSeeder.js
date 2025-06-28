@@ -399,7 +399,102 @@ module.exports = async () => {
       category: 1, // Alimentos
       featured: true,
     },
-    // ... (todos los demás alimentos mantienen category: 1 exactamente como los tenías)
+    {
+      name: "Purina Pro Plan Cordero y Arroz",
+      description: "Con proteína de cordero y arroz para una mejor digestión.",
+      image: "https://static.wixstatic.com/media/2c05ab_fcea9b9c10754e3e9e3fd2eeb1df425f~mv2.jpg",
+      price: 1747,
+      stock: 25,
+      category: 1,
+      featured: true,
+    },
+    {
+      name: "Royal Canin Maxi Adult",
+      description: "Formulado para perros grandes con alta energía.",
+      image:
+        "https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/2022-04/pp-promo-maxi-adult.jpg",
+      price: 1557,
+      stock: 25,
+      category: 1,
+      featured: true,
+    },
+    {
+      name: "Eukanuba Cachorro Razas Pequeñas",
+      description: "Nutrición completa para el desarrollo del cachorro.",
+      image:
+        "https://www.eukanuba.com/sites/g/files/qyyrlu426/files/styles/product_image/public/media/images/product-images/puppy_small_breed.jpg",
+      price: 1505,
+      stock: 25,
+      category: 1,
+      featured: true,
+    },
+    {
+      name: "Dog Selection Premium Adulto",
+      description: "Contiene Omega 3 y 6 para un pelaje brillante.",
+      image: "https://www.agrosuni.com/wp-content/uploads/2021/09/dog-selection-premium-adulto.jpg",
+      price: 1520,
+      stock: 25,
+      category: 1,
+      featured: true,
+    },
+    {
+      name: "Pedigree Adulto Carne y Vegetales",
+      description: "Sabores naturales que encantan a tu mascota.",
+      image:
+        "https://jumbo.vtexassets.com/arquivos/ids/677812-800-auto?v=638206330145030000&width=800&height=auto&aspect=true",
+      price: 1511,
+      stock: 25,
+      category: 1,
+      featured: true,
+    },
+    {
+      name: "Nutribon Alimento Balanceado",
+      description: "Balanceado con vitaminas y minerales esenciales.",
+      image: "https://nutribon.com.ar/wp-content/uploads/2021/07/Nutribon-Premium-Adulto-Carne.jpg",
+      price: 1389,
+      stock: 25,
+      category: 1,
+      featured: true,
+    },
+    {
+      name: "Excellent Pollo y Arroz",
+      description: "Con prebióticos para salud digestiva.",
+      image:
+        "https://www.excellentpet.com.ar/sites/default/files/styles/product/public/2020-11/EXC-ADULTO.png",
+      price: 1595,
+      stock: 25,
+      category: 1,
+      featured: true,
+    },
+    {
+      name: "Old Prince Natural Gourmet",
+      description: "Alimento gourmet sin colorantes artificiales.",
+      image:
+        "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/365/001/products/old-prince-gourmet-natural1-b99973fd06f1bafad816287144118916-640-0.jpg",
+      price: 1678,
+      stock: 25,
+      category: 1,
+      featured: true,
+    },
+    {
+      name: "Raza Perros Medianos",
+      description: "Fácil de masticar y alto en nutrientes.",
+      image:
+        "https://cdn.ferrini.com.uy/media/catalog/product/cache/09e6b8491d7f3f3b6a7d7a012d04ffeb/8/4/8410650296505_1.jpg",
+      price: 1643,
+      stock: 25,
+      category: 1,
+      featured: true,
+    },
+    {
+      name: "Whiskas Adulto Carne",
+      description: "Para gatos exigentes, sabor carne irresistible.",
+      image: "https://whiskas.cl/sites/g/files/fnmzdf211/files/2022-03/7702026173657.png",
+      price: 1777,
+      stock: 25,
+      category: 1,
+      featured: true,
+    },
   ];
 
   await Product.bulkCreate(products);
