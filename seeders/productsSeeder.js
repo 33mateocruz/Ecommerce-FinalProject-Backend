@@ -235,7 +235,8 @@ module.exports = async () => {
     {
       name: "Disco Volador para Perros",
       description: "Flexible, divertido para correr.",
-      image: "https://pngimg.com/d/frisbee_PNG6.png",
+      image:
+        "https://e7.pngegg.com/pngimages/560/573/png-clipart-dog-toys-puppy-flying-discs-dog-toys-frisbee-blue-animals.png",
       price: 580,
       stock: 25,
       category: 8, // Juguetes (antes 22)
@@ -393,7 +394,8 @@ module.exports = async () => {
     {
       name: "DogChow Adulto Razas Medianas",
       description: "Con proteínas de alta calidad y antioxidantes naturales.",
-      image: "",
+      image:
+        "https://purina.com.co/sites/default/files/2022-11/Purina-DogChow-adultos7%2Bcolombia.png",
       price: 1450,
       stock: 25,
       category: 1, // Alimentos
@@ -402,7 +404,8 @@ module.exports = async () => {
     {
       name: "Purina Pro Plan Cordero y Arroz",
       description: "Con proteína de cordero y arroz para una mejor digestión.",
-      image: "https://static.wixstatic.com/media/2c05ab_fcea9b9c10754e3e9e3fd2eeb1df425f~mv2.jpg",
+      image:
+        "https://www.purina.com/sites/default/files/products/2022-11/ppdog_dev_pup_lambrc_hero_f_20.png",
       price: 1747,
       stock: 25,
       category: 1,
@@ -411,8 +414,7 @@ module.exports = async () => {
     {
       name: "Royal Canin Maxi Adult",
       description: "Formulado para perros grandes con alta energía.",
-      image:
-        "https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/2022-04/pp-promo-maxi-adult.jpg",
+      image: "https://d34xtejqjqcp3x.cloudfront.net/store/427350ce79243105ce504823f6906961.png",
       price: 1557,
       stock: 25,
       category: 1,
@@ -421,8 +423,7 @@ module.exports = async () => {
     {
       name: "Eukanuba Cachorro Razas Pequeñas",
       description: "Nutrición completa para el desarrollo del cachorro.",
-      image:
-        "https://www.eukanuba.com/sites/g/files/qyyrlu426/files/styles/product_image/public/media/images/product-images/puppy_small_breed.jpg",
+      image: "https://drmascota.uy/wp-content/uploads/2023/09/Eukanuba-Puppy-Small.png",
       price: 1505,
       stock: 25,
       category: 1,
@@ -431,7 +432,7 @@ module.exports = async () => {
     {
       name: "Dog Selection Premium Adulto",
       description: "Contiene Omega 3 y 6 para un pelaje brillante.",
-      image: "https://www.agrosuni.com/wp-content/uploads/2021/09/dog-selection-premium-adulto.jpg",
+      image: "https://www.dog-selection.com.ar/wp-content/uploads/2020/11/premium-adultos-2.png",
       price: 1520,
       stock: 25,
       category: 1,
@@ -440,8 +441,7 @@ module.exports = async () => {
     {
       name: "Pedigree Adulto Carne y Vegetales",
       description: "Sabores naturales que encantan a tu mascota.",
-      image:
-        "https://jumbo.vtexassets.com/arquivos/ids/677812-800-auto?v=638206330145030000&width=800&height=auto&aspect=true",
+      image: "https://vlm.com.uy/wp-content/uploads/2020/08/17.08-Pedigree-1-7-CV-8kg.png",
       price: 1511,
       stock: 25,
       category: 1,
@@ -450,7 +450,8 @@ module.exports = async () => {
     {
       name: "Nutribon Alimento Balanceado",
       description: "Balanceado con vitaminas y minerales esenciales.",
-      image: "https://nutribon.com.ar/wp-content/uploads/2021/07/Nutribon-Premium-Adulto-Carne.jpg",
+      image:
+        "https://acdn-us.mitiendanube.com/stores/979/500/products/envase-nutribon-plus-perros-adultos21-afc96204364c4abc1216700072583096-640-0.png",
       price: 1389,
       stock: 25,
       category: 1,
@@ -460,7 +461,7 @@ module.exports = async () => {
       name: "Excellent Pollo y Arroz",
       description: "Con prebióticos para salud digestiva.",
       image:
-        "https://www.excellentpet.com.ar/sites/default/files/styles/product/public/2020-11/EXC-ADULTO.png",
+        "https://purina.com.co/sites/default/files/styles/webp/public/2024-11/Excellent%20Adulto%20Razas%20Medianas%20y%20Grandes.png.webp?itok=XHoEDsPa",
       price: 1595,
       stock: 25,
       category: 1,
@@ -469,8 +470,7 @@ module.exports = async () => {
     {
       name: "Old Prince Natural Gourmet",
       description: "Alimento gourmet sin colorantes artificiales.",
-      image:
-        "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/365/001/products/old-prince-gourmet-natural1-b99973fd06f1bafad816287144118916-640-0.jpg",
+      image: "https://oldprince.com.ar/wp-content/uploads/2023/06/cerdo-1.png",
       price: 1678,
       stock: 25,
       category: 1,
@@ -479,8 +479,7 @@ module.exports = async () => {
     {
       name: "Raza Perros Medianos",
       description: "Fácil de masticar y alto en nutrientes.",
-      image:
-        "https://cdn.ferrini.com.uy/media/catalog/product/cache/09e6b8491d7f3f3b6a7d7a012d04ffeb/8/4/8410650296505_1.jpg",
+      image: "https://cdnx.jumpseller.com/la-mascota/image/20190906/1200/630?1646838847",
       price: 1643,
       stock: 25,
       category: 1,
@@ -489,7 +488,7 @@ module.exports = async () => {
     {
       name: "Whiskas Adulto Carne",
       description: "Para gatos exigentes, sabor carne irresistible.",
-      image: "https://whiskas.cl/sites/g/files/fnmzdf211/files/2022-03/7702026173657.png",
+      image: "https://agropar.com.ar/wp-content/uploads/2020/07/Carne-01_0010.png",
       price: 1777,
       stock: 25,
       category: 1,
