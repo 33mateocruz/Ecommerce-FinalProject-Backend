@@ -9,27 +9,9 @@ class Order extends Model {
           primaryKey: true,
           autoIncrement: true,
         },
-        compradorId: {
+        userId: {
           type: DataTypes.BIGINT.UNSIGNED,
           allowNull: false,
-        },
-        nombreProducto: {
-          type: DataTypes.STRING,
-          allowNull: false,
-        },
-        cantidad: {
-          type: DataTypes.INTEGER,
-          allowNull: false,
-          validate: {
-            min: 1,
-          },
-        },
-        precio: {
-          type: DataTypes.DECIMAL(10, 2),
-          allowNull: false,
-          validate: {
-            min: 0,
-          },
         },
         estado: {
           type: DataTypes.ENUM("pago pendiente", "rechazado", "pago", "en tránsito", "entregado"),
@@ -45,6 +27,11 @@ class Order extends Model {
     );
 
     return Order;
+  }
+
+  static associate(models) {
+    Order.belongsTo(models.User, { foreignKey: "userId", as: "user" });
+    Order.hasMany(models.OrderProduct, { foreignKey: "orderId", as: "orderProducts" });
   }
 }
 

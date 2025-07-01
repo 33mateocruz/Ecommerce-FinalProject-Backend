@@ -1,32 +1,41 @@
 "use strict";
 
-const { Order } = require("../models");
+const { Order, OrderProduct, Product, sequelize } = require("../models");
 
 module.exports = async () => {
-  const orders = [
-    {
-      compradorId: 1,
-      nombreProducto: "Smart TV 55",
-      cantidad: 2,
-      precio: 499.99,
-      estado: "pago pendiente",
-    },
-    {
-      compradorId: 1,
-      nombreProducto: "Bluetooth Speaker",
-      cantidad: 1,
-      precio: 89.99,
-      estado: "pago pendiente",
-    },
-    {
-      compradorId: 2,
-      nombreProducto: "Air Conditioner 3000W",
-      cantidad: 3,
-      precio: 329.99,
-      estado: "en tránsito",
-    },
-  ];
+  await sequelize.query("SET FOREIGN_KEY_CHECKS = 0");
 
-  await Order.bulkCreate(orders);
-  console.log("[Database] Se corrió el seeder de Orders.");
+  const orden1 = await Order.create({ userId: 1, estado: "pago pendiente" });
+  const orden2 = await Order.create({ userId: 2, estado: "en tránsito" });
+
+  const camperita = await Product.findOne({ where: { name: "Camperita Impermeable Azul" } });
+  const botitas = await Product.findOne({ where: { name: "Botitas Antideslizantes" } });
+  const pelota = await Product.findOne({ where: { name: "Pelota de Goma con Sonido" } });
+
+  await OrderProduct.create({
+    orderId: orden1.id,
+    productId: camperita.id,
+    productName: camperita.name,
+    productPrice: camperita.price,
+    quantity: 2,
+  });
+  await OrderProduct.create({
+    orderId: orden1.id,
+    productId: botitas.id,
+    productName: botitas.name,
+    productPrice: botitas.price,
+    quantity: 1,
+  });
+
+  await OrderProduct.create({
+    orderId: orden2.id,
+    productId: pelota.id,
+    productName: pelota.name,
+    productPrice: pelota.price,
+    quantity: 3,
+  });
+
+  await sequelize.query("SET FOREIGN_KEY_CHECKS = 1");
+
+  console.log("[Database] Se corrió el seeder de Orders y OrderProducts (versión simple).");
 };

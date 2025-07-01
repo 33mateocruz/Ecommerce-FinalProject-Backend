@@ -14,8 +14,18 @@
  */
 
 require("dotenv").config();
+const { sequelize, OrderProduct, Order, Product, User, Category } = require("../models");
 
 async function runAllSeeders() {
+  // Limpieza de la base de datos antes de ejecutar los seeders
+  await sequelize.query("SET FOREIGN_KEY_CHECKS = 0");
+  await OrderProduct.destroy({ where: {}, force: true });
+  await Order.destroy({ where: {}, force: true });
+  await Product.destroy({ where: {}, force: true });
+  await User.destroy({ where: {}, force: true });
+  await Category.destroy({ where: {}, force: true });
+  await sequelize.query("SET FOREIGN_KEY_CHECKS = 1");
+
   await require("./userSeeder")();
   await require("./productsSeeder")();
   await require("./orderSeeder")();

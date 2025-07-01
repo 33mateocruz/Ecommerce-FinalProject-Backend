@@ -2,7 +2,7 @@ const { User } = require("../models");
 const bcrypt = require("bcryptjs");
 
 module.exports = async () => {
-  await User.destroy({ where: {}, truncate: true });
+  await User.destroy({ where: {}, force: true });
 
   const users = [
     {

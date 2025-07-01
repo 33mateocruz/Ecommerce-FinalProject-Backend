@@ -15,7 +15,7 @@ const User = require("./User");
 const Product = require("./products");
 const Order = require("./order");
 const Category = require("./categories");
-const OrderProduct = require("./orderproducts");
+const OrderProduct = require("./OrderProducts");
 
 const models = {
   AdminUser: AdminUser.initModel(sequelize),
