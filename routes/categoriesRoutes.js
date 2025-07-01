@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const categoriesController = require("../controllers/categoriesController.js");
+const { expressjwt: checkJwt } = require("express-jwt");
 
 router.get("/", categoriesController.index);
 router.get("/:id", categoriesController.show);

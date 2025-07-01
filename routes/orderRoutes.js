@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const orderController = require("../controllers/orderController");
+const { expressjwt: checkJwt } = require("express-jwt");
 
 router.get("/", orderController.index);
 router.post("/", orderController.store);
