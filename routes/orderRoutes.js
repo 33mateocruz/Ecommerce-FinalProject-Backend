@@ -5,7 +5,15 @@ const orderController = require("../controllers/orderController");
 router.get("/", orderController.index);
 router.post("/", orderController.store);
 router.get("/:id", orderController.show);
-router.patch("/:id", orderController.update);
-router.delete("/:id", orderController.destroy);
+router.patch(
+  "/:id",
+  checkJwt({ secret: process.env.JWT_SECRET, algorithms: ["HS256"] }),
+  orderController.update,
+);
+router.delete(
+  "/:id",
+  checkJwt({ secret: process.env.JWT_SECRET, algorithms: ["HS256"] }),
+  orderController.destroy,
+);
 
 module.exports = router;

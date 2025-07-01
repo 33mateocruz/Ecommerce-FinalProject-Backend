@@ -10,7 +10,16 @@ router.post(
   checkJwt({ secret: process.env.JWT_SECRET, algorithms: ["HS256"] }),
   productController.store,
 );
-router.patch("/:id", productController.update);
-router.delete("/:id", productController.destroy);
+router.patch(
+  "/:id",
+  checkJwt({ secret: process.env.JWT_SECRET, algorithms: ["HS256"] }),
+  productController.update,
+);
+
+router.delete(
+  "/:id",
+  checkJwt({ secret: process.env.JWT_SECRET, algorithms: ["HS256"] }),
+  productController.destroy,
+);
 
 module.exports = router;
