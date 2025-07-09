@@ -1,4 +1,5 @@
 const Product = require("../models/products");
+const { Op, fn, col, where } = require("sequelize");
 
 const index = async (req, res) => {
   try {
@@ -65,10 +66,32 @@ const destroy = async (req, res) => {
   }
 };
 
+const searchByName = async (req, res) => {
+  const query = req.query.query;
+
+  try {
+    if (!query) {
+      return res.status(400).json({ error: "Missing search query" });
+    }
+
+    const products = await Product.findAll({
+      where: where(fn("LOWER", col("name")), {
+        [Op.like]: `%${query.toLowerCase()}%`,
+      }),
+    });
+
+    res.json(products);
+  } catch (error) {
+    console.error("Error searching products:", error);
+    res.status(500).json({ error: "Error searching products" });
+  }
+};
+
 module.exports = {
   index,
   show,
   store,
   update,
   destroy,
+  searchByName,
 };
