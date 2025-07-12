@@ -1,5 +1,4 @@
 const bcrypt = require("bcryptjs");
-
 const { User } = require("../models");
 
 async function index(req, res) {
@@ -31,10 +30,11 @@ async function store(req, res) {
       email,
       address,
       phone,
-      hashedPassword,
+      password: hashedPassword,
     });
     res.status(201).json(newUser);
   } catch (error) {
+    console.error(error);
     res.status(400).json({ message: "Error al crear el usuario" });
   }
 }
